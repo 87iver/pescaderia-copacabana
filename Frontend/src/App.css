@@ -1,0 +1,348 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFF7ED;
+    color: #0B4F6C;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 75px;
+    background-color: #FF6A00;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 60px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.logo span {
+    margin-left: 8px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 12px;
+}
+
+.nav-links button {
+    border: none;
+    background: transparent;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    padding: 10px 18px;
+    border-radius: 20px;
+
+    cursor: pointer;
+}
+
+.nav-links button:hover {
+    background-color: #0B4F6C;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 520px;
+
+    background-color: #FF6A00;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 60px 10%;
+}
+
+.hero-text {
+    max-width: 600px;
+    color: white;
+}
+
+.etiqueta {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 64px;
+    line-height: 1.05;
+    margin: 0;
+}
+
+.hero h1 span {
+    color: #0B4F6C;
+}
+
+.descripcion {
+    font-size: 19px;
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+.boton-menu {
+    margin-top: 20px;
+
+    background-color: #0B4F6C;
+    color: white;
+
+    border: none;
+    border-radius: 30px;
+
+    padding: 16px 28px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.boton-menu:hover {
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   PESCADO
+========================= */
+
+.hero-pescado {
+    width: 300px;
+    height: 300px;
+
+    background-color: #FFF7ED;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 150px;
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================
+   PLATOS
+========================= */
+
+.platos {
+    padding: 70px 10%;
+    text-align: center;
+
+    background-color: #FFF7ED;
+}
+
+.platos h2 {
+    font-size: 42px;
+    margin-top: 5px;
+    margin-bottom: 40px;
+}
+
+.platos .etiqueta {
+    color: #FF6A00;
+}
+
+.productos {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+/* =========================
+   TARJETAS
+========================= */
+
+.producto-card {
+    width: 300px;
+
+    background-color: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    text-align: left;
+
+    box-shadow: 0 8px 25px rgba(11, 79, 108, 0.15);
+
+    transition: 0.3s;
+}
+
+.producto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(11, 79, 108, 0.25);
+}
+
+.producto-imagen {
+    height: 180px;
+
+    background-color: #0B4F6C;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 90px;
+}
+
+.producto-info {
+    padding: 20px;
+}
+
+.producto-info h3 {
+    color: #0B4F6C;
+    font-size: 23px;
+    margin-top: 0;
+}
+
+.producto-info p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.producto-abajo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 20px;
+}
+
+.producto-abajo strong {
+    color: #FF6A00;
+    font-size: 22px;
+}
+
+.producto-abajo button {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #FF6A00;
+    color: white;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.producto-abajo button:hover {
+    background-color: #0B4F6C;
+}
+
+/* =========================
+   PANTALLA DE BIENVENIDA
+========================= */
+
+.bienvenida {
+    min-height: 100vh;
+
+    background-color: #FF6A00;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+}
+
+.bienvenida-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bienvenida-pescado {
+    width: 150px;
+    height: 150px;
+
+    background-color: #FFF7ED;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 80px;
+
+    margin-bottom: 25px;
+}
+
+.bienvenida-etiqueta {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.bienvenida h1 {
+    font-size: 70px;
+    margin: 10px 0;
+
+    color: #0B4F6C;
+}
+
+.bienvenida p {
+    font-size: 20px;
+}
+
+.boton-comenzar {
+    margin-top: 30px;
+
+    background-color: #0B4F6C;
+    color: white;
+
+    border: none;
+    border-radius: 40px;
+
+    padding: 20px 35px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+    transition: 0.2s;
+}
+
+.boton-comenzar:hover {
+    transform: scale(1.07);
+    background-color: #FFF7ED;
+    color: #0B4F6C;
+}

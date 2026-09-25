@@ -1,0 +1,240 @@
+
+/* =========================
+   PANTALLA DE BIENVENIDA
+   ========================= */
+
+.bienvenida {
+    min-height: 100vh;
+    min-height: 100svh;
+    width: 100%;
+    background-color: #FF6A00;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    color: white;
+
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.bienvenida-contenido {
+    width: 100%;
+    max-width: 600px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =========================
+   ICONO DEL PESCADO
+   ========================= */
+
+.bienvenida-pescado {
+    width: 150px;
+    height: 150px;
+
+    background-color: #FFF7ED;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 80px;
+    margin-bottom: 25px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.20);
+}
+
+/* =========================
+   ETIQUETA
+   ========================= */
+
+.bienvenida-etiqueta {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 4px;
+
+    margin: 0;
+}
+
+/* =========================
+   TITULO
+   ========================= */
+
+.bienvenida h1 {
+    font-size: 70px;
+    margin: 10px 0;
+
+    color: #0B4F6C;
+
+    line-height: 1;
+}
+
+/* =========================
+   DESCRIPCION
+   ========================= */
+
+.bienvenida p {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+/* =========================
+   BOTON
+   ========================= */
+
+.boton-comenzar {
+    margin-top: 30px;
+
+    background-color: #0B4F6C;
+    color: white;
+
+    border: none;
+    border-radius: 40px;
+
+    padding: 20px 35px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+    transition: 0.2s;
+
+    max-width: 100%;
+}
+
+/* Efecto al pasar el mouse */
+
+.boton-comenzar:hover {
+    transform: scale(1.07);
+
+    background-color: #FFF7ED;
+    color: #0B4F6C;
+}
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .bienvenida {
+        padding: 30px 20px;
+    }
+
+    .bienvenida-pescado {
+        width: 130px;
+        height: 130px;
+        font-size: 70px;
+        margin-bottom: 20px;
+    }
+
+    .bienvenida h1 {
+        font-size: 55px;
+    }
+
+    .bienvenida p {
+        font-size: 18px;
+    }
+
+    .boton-comenzar {
+        font-size: 17px;
+        padding: 18px 28px;
+    }
+}
+
+/* =========================
+   CELULAR
+   ========================= */
+
+@media (max-width: 480px) {
+
+    .bienvenida {
+        padding: 20px 16px;
+    }
+
+    .bienvenida-contenido {
+        max-width: 100%;
+    }
+
+    .bienvenida-pescado {
+        width: 105px;
+        height: 105px;
+
+        font-size: 58px;
+
+        margin-bottom: 18px;
+    }
+
+    .bienvenida-etiqueta {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .bienvenida h1 {
+        font-size: 42px;
+        margin: 10px 0;
+    }
+
+    .bienvenida p {
+        font-size: 16px;
+        line-height: 1.4;
+
+        max-width: 320px;
+    }
+
+    .boton-comenzar {
+        width: 100%;
+        max-width: 340px;
+
+        min-height: 56px;
+
+        padding: 16px 20px;
+
+        font-size: 15px;
+
+        margin-top: 25px;
+    }
+
+    .boton-comenzar:hover {
+        transform: none;
+    }
+}
+
+/* =========================
+   CELULARES MUY PEQUEÑOS
+   ========================= */
+
+@media (max-width: 360px) {
+
+    .bienvenida-pescado {
+        width: 90px;
+        height: 90px;
+        font-size: 50px;
+    }
+
+    .bienvenida h1 {
+        font-size: 36px;
+    }
+
+    .bienvenida-etiqueta {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .bienvenida p {
+        font-size: 15px;
+    }
+
+    .boton-comenzar {
+        font-size: 14px;
+    }
+}

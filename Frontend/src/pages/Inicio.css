@@ -1,0 +1,283 @@
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 520px;
+    background-color: #FF6A00;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 60px 8%;
+    box-sizing: border-box;
+}
+
+/* =========================
+   TEXTO DEL HERO
+========================= */
+
+.hero-text {
+    max-width: 600px;
+    color: white;
+}
+
+.etiqueta {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 64px;
+    line-height: 1.05;
+    margin: 0;
+}
+
+.hero h1 span {
+    color: #0B4F6C;
+}
+
+.descripcion {
+    font-size: 19px;
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+/* =========================
+   BOTÓN
+========================= */
+
+.boton-menu {
+    margin-top: 20px;
+    background-color: #0B4F6C;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 16px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.boton-menu:hover {
+    transform: scale(1.05);
+    background-color: #083D54;
+}
+/* =========================
+   ESPACIADO DEL HERO
+========================= */
+
+.hero-text .etiqueta {
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.hero .descripcion {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.boton-menu {
+    margin-top: 0;
+}
+/* =========================
+   IMAGEN COPACABANA
+========================= */
+
+.hero-pescado {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    border-radius: 35px;
+    overflow: hidden;
+    background-color: #FFF7ED;
+    border: 8px solid #FFF7ED;
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.25),
+        0 0 0 8px rgba(11, 79, 108, 0.35);
+    transform: rotate(2deg);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Imagen */
+
+.hero-pescado img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+/* Efecto al pasar el mouse */
+
+.hero-pescado:hover {
+    transform: rotate(0deg) scale(1.03);
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.3),
+        0 0 0 8px rgba(11, 79, 108, 0.55);
+}
+
+.hero-pescado:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   PLATOS
+========================= */
+
+.platos {
+    padding: 70px 10%;
+    text-align: center;
+
+    background-color: #FFF7ED;
+}
+
+.platos h2 {
+    font-size: 42px;
+    margin-top: 5px;
+    margin-bottom: 40px;
+}
+
+.platos .etiqueta {
+    color: #FF6A00;
+}
+
+/* =========================
+   PRODUCTOS
+========================= */
+
+.productos {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1023px) {
+
+    .platos {
+        padding: 60px 5%;
+    }
+
+    .platos h2 {
+        font-size: 36px;
+    }
+
+    .productos {
+        gap: 20px;
+    }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 767px) {
+
+    .platos {
+        padding: 50px 20px;
+    }
+
+    .platos h2 {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
+    .platos .etiqueta {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .productos {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1023px) {
+
+    .hero {
+        padding: 50px 5%;
+        gap: 30px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .descripcion {
+        font-size: 17px;
+    }
+
+    .hero-pescado {
+        width: 300px;
+        height: 300px;
+    }
+
+}
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 767px) {
+
+    .hero {
+        min-height: auto;
+        flex-direction: column;
+        text-align: center;
+        padding: 45px 20px;
+        gap: 35px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .etiqueta {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .descripcion {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .boton-menu {
+        font-size: 14px;
+        padding: 14px 22px;
+    }
+
+    .hero-pescado {
+        width: 260px;
+        height: 260px;
+    }
+
+}

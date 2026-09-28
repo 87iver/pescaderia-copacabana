@@ -1,5 +1,9 @@
 import ProductoCard from '../components/ProductoCard'
 
+import copacabana from '../assets/copacabana.jpg'
+import trucha from '../assets/trucha.jpg'
+import pejerrey from '../assets/pejerey.jpg'
+import sabalo from '../assets/sabalo.jpg'
 function Inicio() {
     return (
         <main>
@@ -30,7 +34,10 @@ function Inicio() {
                 </div>
 
                 <div className="hero-pescado">
-                    🐟
+                    <img
+                        src={copacabana}
+                        alt="Copacabana y el Lago Titicaca"
+                    />
                 </div>
 
             </section>
@@ -42,7 +49,7 @@ function Inicio() {
                     LO MÁS PEDIDO
                 </p>
 
-                <h2>
+                <h2 className='etiqueta'>
                     Nuestros platos
                 </h2>
 
@@ -52,18 +59,28 @@ function Inicio() {
                         nombre="Trucha Frita"
                         descripcion="Trucha fresca acompañada de arroz, papa y ensalada."
                         precio={35}
+                        imagen={trucha}
                     />
 
                     <ProductoCard
                         nombre="Pejerrey"
                         descripcion="Pejerrey crujiente con guarnición y ensalada fresca."
                         precio={30}
+                        imagen={pejerrey}
                     />
 
                     <ProductoCard
-                        nombre="Sopa de Pescado"
-                        descripcion="Calientita, tradicional y preparada con pescado fresco."
-                           precio={20}
+                        nombre="Sábalo Frito"
+                        descripcion="Sábalo dorado y crujiente acompañado de papa y ensalada."
+                        precio={40}
+                        imagen={sabalo}
+                    />
+
+                    <ProductoCard
+                        nombre="Trucha a la Plancha"
+                        descripcion="Trucha preparada a la plancha con guarnición fresca."
+                        precio={38}
+               
                     />
 
                 </div>

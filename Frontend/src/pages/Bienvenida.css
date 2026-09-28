@@ -90,24 +90,16 @@
 
 .boton-comenzar {
     margin-top: 30px;
-
     background-color: #0B4F6C;
     color: white;
-
     border: none;
     border-radius: 40px;
-
     padding: 20px 35px;
-
     font-size: 18px;
     font-weight: bold;
-
     cursor: pointer;
-
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-
     transition: 0.2s;
-
     max-width: 100%;
 }
 
@@ -115,7 +107,6 @@
 
 .boton-comenzar:hover {
     transform: scale(1.07);
-
     background-color: #FFF7ED;
     color: #0B4F6C;
 }

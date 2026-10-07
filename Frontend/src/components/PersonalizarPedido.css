@@ -1,0 +1,229 @@
+/* =========================
+   FONDO DEL MODAL
+========================= */
+
+.modal-fondo {
+    position: fixed;
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0.65);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+}
+
+
+/* =========================
+   VENTANA
+========================= */
+
+.modal-pedido {
+    width: 100%;
+    max-width: 500px;
+
+    background-color: #FFF7ED;
+
+    border-radius: 25px;
+
+    padding: 30px;
+
+    position: relative;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+
+/* =========================
+   CERRAR
+========================= */
+
+.cerrar-modal {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #0B4F6C;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+.cerrar-modal:hover {
+    background-color: #FF6A00;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.modal-pedido h2 {
+    color: #0B4F6C;
+
+    margin-top: 0;
+    margin-bottom: 5px;
+
+    font-size: 28px;
+}
+
+.precio-modal {
+    color: #FF6A00;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    margin-top: 0;
+}
+
+.modal-pedido h3 {
+    color: #333;
+
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   OPCIONES
+========================= */
+
+.opcion-pedido {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: white;
+
+    padding: 12px 15px;
+
+    border-radius: 15px;
+
+    margin-bottom: 10px;
+}
+
+.opcion-pedido span {
+    color: #0B4F6C;
+
+    font-size: 16px;
+
+    font-weight: bold;
+}
+
+.opcion-pedido div {
+    display: flex;
+
+    gap: 6px;
+}
+
+.opcion-pedido button {
+    border: 2px solid #0B4F6C;
+
+    background-color: white;
+
+    color: #0B4F6C;
+
+    border-radius: 20px;
+
+    padding: 6px 12px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.opcion-pedido button:hover {
+    background-color: #0B4F6C;
+
+    color: white;
+}
+.opcion-pedido button.seleccionado {
+    background-color: #FF6A00;
+    color: white;
+    border-color: #FF6A00;
+}
+
+
+/* =========================
+   AGREGAR
+========================= */
+
+.agregar-pedido {
+    width: 100%;
+
+    margin-top: 20px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background-color: #FF6A00;
+
+    color: white;
+
+    padding: 15px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 6px 15px rgba(255, 106, 0, 0.3);
+}
+
+.agregar-pedido:hover {
+    background-color: #0B4F6C;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 767px) {
+
+    .modal-pedido {
+        padding: 25px 18px;
+
+        border-radius: 20px;
+    }
+
+    .modal-pedido h2 {
+        font-size: 23px;
+    }
+
+    .opcion-pedido {
+        padding: 10px;
+    }
+
+    .opcion-pedido span {
+        font-size: 14px;
+    }
+
+    .opcion-pedido button {
+        padding: 6px 9px;
+        font-size: 12px;
+    }
+}

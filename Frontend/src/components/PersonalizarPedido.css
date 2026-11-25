@@ -1,3 +1,119 @@
+/* Botón Con todo */
+.boton-con-todo {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 2px solid #FF6A00;
+    border-radius: 12px;
+    background-color: #FFF7ED;
+    color: #0B4F6C;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+.boton-con-todo.activo {
+    background-color: #FF6A00;
+    color: white;
+    border-color: #FF6A00;
+}
+
+.boton-con-todo:hover {
+    background-color: #0B4F6C;
+    color: white;
+}
+
+.texto-acompanamientos {
+    margin: 8px 0 14px;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Fila de cada ingrediente */
+.opcion-pedido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 4px;
+    border-bottom: 1px solid #eee;
+}
+
+.opcion-pedido > label:first-child {
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.opcion-pedido:has(input:checked) {
+    background-color: #FF6A00;
+    color: white;
+    border-color: #FF6A00;
+    transition: 0.25s;
+}
+.opcion-pedido {
+    cursor: pointer;
+}
+
+.opcion-pedido:has(input:checked) {
+    background-color: #FF6A00;
+    color: white;
+    border-color: #FF6A00;
+}
+/* Contenedor del switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 27px;
+    flex-shrink: 0;
+}
+
+/* Ocultamos visualmente el checkbox original */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Fondo del interruptor */
+.switch-slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: #ccc;
+    border-radius: 30px;
+    transition: 0.25s;
+}
+
+/* Círculo del interruptor */
+.switch-slider::before {
+    content: "";
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    left: 3px;
+    top: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.25s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Switch activado */
+.switch input:checked + .switch-slider {
+    background-color: #FF6A00;
+}
+
+/* Movemos el círculo al activar */
+.switch input:checked + .switch-slider::before {
+    transform: translateX(21px);
+}
+
+/* Indicador de teclado */
+.switch input:focus-visible + .switch-slider {
+    outline: 3px solid #0B4F6C;
+    outline-offset: 3px;
+}
 /* =========================
    FONDO DEL MODAL
 ========================= */
@@ -93,10 +209,8 @@
 
     margin-top: 0;
 }
-
 .modal-pedido h3 {
     color: #333;
-
     margin-top: 25px;
     margin-bottom: 20px;
 }

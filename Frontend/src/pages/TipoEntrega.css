@@ -1,0 +1,75 @@
+.tipo-entrega {
+  min-height: 100vh;
+  background-color: #FFF7ED;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.tipo-entrega h2 {
+  color: #0B4F6C;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.tipo-entrega > p {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.tipo-entrega button:not(:last-child) {
+  width: 100%;
+  max-width: 420px;
+  min-height: 130px;
+  margin-bottom: 18px;
+  padding: 20px;
+  border: 2px solid #0B4F6C;
+  border-radius: 18px;
+  background-color: white;
+  color: #0B4F6C;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.tipo-entrega button:not(:last-child):hover {
+  border-color: #FF6A00;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+}
+
+.tipo-entrega button h3 {
+  font-size: 20px;
+  margin: 8px 0;
+}
+
+.tipo-entrega button p {
+  font-size: 14px;
+  margin: 0;
+  color: #666;
+}
+
+.tipo-entrega button:last-child {
+  margin-top: 15px;
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  color: #0B4F6C;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .tipo-entrega h2 {
+    font-size: 24px;
+  }
+
+  .tipo-entrega button:not(:last-child) {
+    min-height: 115px;
+  }
+}

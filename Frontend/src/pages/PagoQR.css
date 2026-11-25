@@ -1,0 +1,97 @@
+.pago-qr {
+    min-height: 100vh;
+    width: 100%;    
+    padding: 35px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #FFF7ED;
+    color: #0B4F6C;
+}
+
+.pago-qr h2 {
+    font-size: 32px;
+    margin-bottom: 9px;
+}
+
+.pago-qr > p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.qr-contenedor {
+    width: 330px;
+    height: 330px;
+    margin: 20px 0;
+    padding: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    background: white;
+
+    border: 3px dashed #FF6A00;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(11, 79, 108, 0.12);
+}
+
+.pago-qr h3 {
+    margin: 10px 0 5px;
+    font-size: 20px;
+
+}
+
+.pago-qr strong {
+    font-size: 34px;
+    color: #FF6A00;
+    margin: 8px 0;
+}
+
+.pago-qr button {
+    margin-top: 25px;
+    padding: 14px 35px;
+    border: none;
+    border-radius: 12px;
+    background: #0B4F6C;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.pago-qr button:hover {
+background: #FF6A00;
+transform: translateY(-2px);
+}
+.qr-contenedor img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 480px) {
+    .pago-qr {
+        padding: 20px 12px;
+    }
+
+    .pago-qr h2 {
+        font-size: 24px;
+    }
+
+    .qr-contenedor {
+        width: 210px;
+        height: 210px;
+    }
+
+    .pago-qr strong {
+        font-size: 26px;
+    }
+}

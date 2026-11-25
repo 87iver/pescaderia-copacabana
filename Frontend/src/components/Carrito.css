@@ -57,6 +57,32 @@
     font-size: 20px;
     font-weight: bold;
 }
+
+.control-cantidad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 12px 0;
+}
+
+.control-cantidad button {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 8px;
+    background-color: #FF6A00;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.control-cantidad span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
 /* =========================
    CELULAR
 ========================= */

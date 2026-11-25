@@ -1,10 +1,9 @@
-import { useState } from 'react'
 import './Carrito.css'
-function Carrito({ carrito, setCarrito, cerrarCarrito }) {
+function Carrito({ carrito, setCarrito, cerrarCarrito ,continuarPedido }) {
     
     
     const total = carrito.reduce(
-        (suma, pedido) => suma + pedido.precio,
+        (suma, pedido) => suma + (pedido.precio*(pedido.cantidad ||1)),
         0
     )
     return (
@@ -33,6 +32,39 @@ function Carrito({ carrito, setCarrito, cerrarCarrito }) {
                             <p>
                                 Bs. {pedido.precio}
                             </p>
+                            <div className="control-cantidad">
+                                <button
+                                    onClick={() => {
+                                        const nuevoCarrito = [...carrito]
+
+                                        nuevoCarrito[index] = {
+                                            ...pedido,
+                                            cantidad: Math.max(1, (pedido.cantidad || 1) - 1)
+                                        }
+
+                                        setCarrito(nuevoCarrito)
+                                    }}
+                                >
+                                    −
+                                </button>
+
+                                <span>{pedido.cantidad || 1}</span>
+
+                                <button
+                                    onClick={() => {
+                                        const nuevoCarrito = [...carrito]
+
+                                        nuevoCarrito[index] = {
+                                            ...pedido,
+                                            cantidad: (pedido.cantidad || 1) + 1
+                                        }
+
+                                        setCarrito(nuevoCarrito)
+                                    }}
+                                >
+                                    +
+                                </button>
+                            </div>
                             <p>
                                 Mote: {pedido.recado.mote ? 'Con' : 'Sin'}
                             </p>
@@ -65,13 +97,15 @@ function Carrito({ carrito, setCarrito, cerrarCarrito }) {
                         </div>
                     ))}
                     <div className="carrito-total">
-                        <span>
-                            Total
-                        </span>
-                        <strong>
-                            Bs. {total}
-                        </strong>
+                        <span>Total</span>
+                        <strong>Bs. {total}</strong>
                     </div>
+                    <button
+                        className="confirmar-pedido"
+                        onClick={continuarPedido}
+                    >
+                        CONTINUAR CON MI PEDIDO →
+                    </button>
                    
                 </>
             )}

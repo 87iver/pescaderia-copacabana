@@ -1,6 +1,12 @@
 function ProductoCard({ nombre, descripcion, precio, imagen, pedir }) {
     return (
-        <div className="producto-card">
+        <div className="producto-card"
+        onClick={() => pedir({
+            nombre,
+            descripcion,
+            precio,
+            imagen
+        })}>
 
             <div className="producto-imagen">
                 <img src={imagen} alt={nombre} />
@@ -19,23 +25,23 @@ function ProductoCard({ nombre, descripcion, precio, imagen, pedir }) {
                     </strong>
 
                     <button
-                        className="boton-pedir"
-                        onClick={() =>
-                            pedir({
-                                nombre,
-                                descripcion,
-                                precio,
-                                imagen
-                            })
-                        }
+                    className="boton-pedir"
+                    onClick={(e) => {
+                        e.stopPropagation()
+                    
+                        pedir({
+                            nombre,
+                            descripcion,
+                            precio,
+                            imagen
+                        });
+                    }}
+
                     >
-                        🍽️ Pedir
+                    🍽️ Pedir
                     </button>
-
                 </div>
-
             </div>
-
         </div>
     )
 }

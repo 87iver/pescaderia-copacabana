@@ -1,17 +1,48 @@
-
 import { useState } from 'react'
-
+import TipoEntrega from './TipoEntrega'
 import ProductoCard from '../components/ProductoCard'
 import PersonalizarPedido from '../components/PersonalizarPedido'
 import Carrito from '../components/Carrito'
-
 import copacabana from '../assets/copacabana.jpg'
 import trucha from '../assets/trucha.jpg'
 import pejerrey from '../assets/pejerey.jpg'
 import sabalo from '../assets/sabalo.jpg'
+import PagoQR from './PagoQR'
 
 function Inicio({ carrito, setCarrito, mostrarCarrito, abrirCarrito }) {
     const [productoSeleccionado, setProductoSeleccionado] = useState(null)
+    const [mostrarTipoEntrega, setMostrarTipoEntrega] = useState(false)
+    const [tipoEntrega, setTipoEntrega] = useState('')
+    const [mostrarPago, setMostrarPago] = useState(false)
+    const cantidadPlatos = carrito.reduce(
+        (total, pedido) => total + (pedido.cantidad || 1),
+        0
+    )
+    const totalCarrito = carrito.reduce(
+        (total, pedido) => total + pedido.precio * (pedido.cantidad || 1),
+        0
+    )
+    if (mostrarPago) {
+        return (
+            <PagoQR
+                total={totalCarrito}
+                carrito={carrito}
+                volver={() => setMostrarPago(false)}
+            />
+        )
+    }
+    if (mostrarTipoEntrega) {
+        return (
+            <TipoEntrega
+                seleccionar={(tipo) => {
+                    setTipoEntrega(tipo)
+                    setMostrarTipoEntrega(false)
+                    setMostrarPago(true)
+                }}
+                volver={() => setMostrarTipoEntrega(false)}
+            />
+        )
+    }
     return (
         <main>
             {carrito.length > 0 && !productoSeleccionado && (
@@ -20,14 +51,11 @@ function Inicio({ carrito, setCarrito, mostrarCarrito, abrirCarrito }) {
                     onClick={abrirCarrito}
                 >
                     <span>
-                        🛒 {carrito.length} plato{carrito.length !== 1 ? 's' : ''}
+                        🛒 {cantidadPlatos} plato{cantidadPlatos !== 1 ? 's' : ''}
                     </span>
 
                     <span>
-                        Bs. {carrito.reduce(
-                            (total, pedido) => total + pedido.precio,
-                            0
-                        )}
+                        Bs. {totalCarrito}
                     </span>
 
                     <strong>
@@ -51,7 +79,13 @@ function Inicio({ carrito, setCarrito, mostrarCarrito, abrirCarrito }) {
                         Disfruta pescado fresco, preparado al momento
                         y con el auténtico sabor de nuestra tierra.
                     </p>
-                    <button className="boton-menu">
+                    <button className="boton-menu"
+                            onClick={() => {
+                            document.getElementById('menu').scrollIntoView({
+                                behavior: 'smooth'
+                            })
+                        }}
+                    >
                         🍽️ VER NUESTRO MENÚ
                     </button>
                 </div>
@@ -65,7 +99,7 @@ function Inicio({ carrito, setCarrito, mostrarCarrito, abrirCarrito }) {
 
             </section>
 
-            <section className="platos">
+            <section className="platos" id="menu">
 
                 <p className="etiqueta">
                     LO MÁS PEDIDO
@@ -118,7 +152,7 @@ function Inicio({ carrito, setCarrito, mostrarCarrito, abrirCarrito }) {
                     producto={productoSeleccionado}
                     cerrar={() => setProductoSeleccionado(null)}
                     agregar={(pedido) => {
-                        setCarrito([...carrito, pedido])
+                        setCarrito((carritoActual) => [...carritoActual,{ ...pedido,cantidad: 1 }])
                     }}
                 />
             )}
@@ -128,6 +162,9 @@ function Inicio({ carrito, setCarrito, mostrarCarrito, abrirCarrito }) {
                 carrito={carrito}
                 setCarrito={setCarrito}
                 cerrarCarrito={() => abrirCarrito()}
+                continuarPedido={() => {
+                abrirCarrito()
+                setMostrarTipoEntrega(true)}}
             />
         )}
         </main>

@@ -6,12 +6,10 @@ on:
       - main
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,7 +19,7 @@ jobs:
       - name: Configurar Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
           cache-dependency-path: Frontend/package-lock.json
 
@@ -29,24 +27,13 @@ jobs:
         working-directory: Frontend
         run: npm ci
 
-      - name: Crear proyecto
+      - name: Compilar React
         working-directory: Frontend
         run: npm run build
 
-      - name: Configurar Pages
-        uses: actions/configure-pages@v5
-
-      - name: Subir archivos
-        uses: actions/upload-pages-artifact@v3
+      - name: Publicar en GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: Frontend/dist
-
-      - name: Publicar
-        id: deployment
-        uses: actions/deploy-pages@v4
-        env:
-          NODE_VERSION: 20
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./Frontend/dist
+          publish_branch: gh-pages
